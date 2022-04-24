@@ -1,0 +1,97 @@
+.app-side {
+    position: fixed;
+    top: 0; bottom: 0;
+    width: 235px;
+    background: #fff;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.35);
+    /*overflow: hidden;*/
+    z-index: 9;
+    overflow-y: auto;
+}
+
+.app-side > .logo-wrapper {
+    position: absolute;
+    width: 100%;
+    font-size: 0;
+}
+
+.app-side > .logo-wrapper > .logo {
+    width: 100%; height: 50px;
+    padding: 8px 32px;
+    content: url("../../../resources/img/logo.png");
+    box-sizing: border-box;
+}
+
+.app-side > .logo-wrapper > .slogan-wrapper {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    background: #3F5AE2;
+}
+
+.app-side > .logo-wrapper > .slogan-wrapper > .slogan {
+    width: 40px;
+    object-fit: cover;
+    object-position: center;
+    /*margin-bottom: 8px;*/
+}
+
+.app-side > .menu-wrapper {
+    margin-top: 56px;
+    /* height: calc(100% - 170); */
+}
+
+.slogan-wrapper .company-name{
+    font-size: 18px;
+    color: #fff;
+}
+
+
+/** 小屏处理 */
+@media screen and (max-width: 1600px) {
+    .app-side {
+        width: 50px;
+        transition: width .3s ease;
+    }
+    .app-side > .logo-wrapper > .slogan-wrapper {
+        height: 50px;
+        flex-direction: column;
+    }
+    /* .app-side > .menu-wrapper {
+        margin-top: 50px;
+    } */
+    /** 鼠标悬停时，展开 */
+    .app-side:hover {
+        width: 235px;
+    }
+    .app-side:hover  > .logo-wrapper > .slogan-wrapper > .slogan{
+        margin-bottom: 8px;
+        width: 60px;
+    }
+    .app-side:hover  > .logo-wrapper > .slogan-wrapper .company-name{
+        font-size: 14px;
+        transition-property: font-size;
+        transition-duration: .2s;
+        margin-left: 0;
+    }
+    /* .app-side:hover > .menu-wrapper {
+        margin-top: 170px;
+    } */
+    .app-side:hover > .logo-wrapper > .slogan-wrapper {
+        height: 170px;
+    }
+    .slogan-wrapper .company-name{
+        font-size: 0;
+        transition-property: font-size;
+        transition-delay: 0s;
+        transition-duration: 0s;
+    }
+    .app-side > .logo-wrapper > .slogan-wrapper > .slogan{
+        width: 45px;
+        margin-bottom: 0;
+    }
+}
+/** /小屏处理 */

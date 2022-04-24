@@ -1,0 +1,55 @@
+.bridge-card-table {
+    width: 100%;
+    font-size: 12px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-width: 1px 1px 0 0;
+    border-style: solid;
+    border-color: #e8e8e8;
+}
+
+.bridge-card-table.inner-table {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+table.bridge-card-table > tbody > tr > th,
+table.bridge-card-table > tbody > tr > td,
+table.bridge-card-table.inner-table > tbody > tr > th,
+table.bridge-card-table.inner-table > tbody > tr > td {
+    padding: 6px;
+    word-break: break-all;
+    border-width: 0 0 1px 1px;
+    border-style: solid;
+    border-color: #e8e8e8;
+}
+
+table.bridge-card-table.inner-table > tbody > tr:last-child > th,
+table.bridge-card-table.inner-table > tbody > tr:last-child > td {
+    border-bottom: none;
+}
+
+table.bridge-card-table > tbody > tr > th.title {
+    width: 100px
+}
+
+table.bridge-card-table > tbody > tr > th.index {
+    width: 32px;
+    text-align: center;
+}
+
+table.bridge-card-table.inner-table > tbody > tr > th.index {
+    width: 31px;
+    border-bottom: none;
+    text-align: center;
+}
+
+table.bridge-card-table.inner-table > tbody > tr > th:first-child {
+    border-left: none;
+}
+
+table.bridge-card-table.inner-table > tbody > tr:last-child > th,
+table.bridge-card-table.inner-table > tbody > tr:last-child > td{
+    border-bottom: none;
+}

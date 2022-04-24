@@ -1,0 +1,121 @@
+.app-header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 48px;
+    /*background: linear-gradient(90deg,#5B86E5,#36D1DC);*/
+    background: #011A33;
+    transition: height 0.5s ease;
+    padding: 0 10px 0 0;
+    z-index: 10;
+    box-shadow: rgba(1, 26, 51, .65) 0 1px 6px;
+}
+.app-header .pull-right p{
+    margin-left: 25px;
+    margin-right: 5px;
+    margin-bottom: 0;
+    display: inline-block;
+    cursor: pointer;
+}
+.app-header .pull-right p .icon-txt{
+    vertical-align: 1px;
+    margin-left: 5px;
+}
+.app-header .top-icon{
+    font-size: 20px;
+}
+
+.app-header.more-info {
+    height: 380px;
+}
+
+.app-header > .header-chart {
+    top: 80px; right: 0; bottom: 30px; left: 0;
+    display: none;
+    position: absolute;
+}
+
+.app-header.more-info > .header-chart {
+    display: block;
+}
+
+.app-header > .nav-bar {
+    /*padding: 10px 32px;*/
+    line-height: 50px;
+}
+
+.app-header > .nav-bar > .path {
+    color: #3E8EF7;
+    font-size: 21px;
+    font-weight: 300;
+    display: none;
+}
+
+.app-header > .nav-bar > .path > .divider {
+    margin: 0 16px;
+}
+
+.app-header > .nav-bar > .path > span:last-child {
+    color: #3E8EF7;
+}
+
+.app-header > .nav-bar .action {
+    font-size: 18px;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    vertical-align: middle;
+    transition: background-color 0.5s ease;
+}
+
+.app-header > .nav-bar .action:hover {
+    background-color: rgb(52,82,234);
+}
+/*.app-header > .nav-bar:after{*/
+/*    content: '';*/
+/*    display: block;*/
+/*    width: 0;*/
+/*    height: 0;*/
+/*    clear: both;*/
+/*}*/
+.select-wrapper {
+    min-width: 180px;
+}
+
+.select-wrapper > .title {
+    font-size: 14px;
+    padding: 0 8px;
+}
+
+.select-wrapper .divider {
+    margin: 12px;
+}
+
+.select-wrapper .icon {
+    margin-right: 12px;
+}
+
+.app-header .logo-top{
+    height: 32px;
+    vertical-align: -6px;
+    margin-left: 20px;
+}
+
+.app-header .sys-name{
+    color: #CCEEFF;
+    font-size: 20px;
+    display: inline-block;
+    
+    /* margin-top: 10px; */
+}
+
+.app-header .divied{
+    height: 28px;
+    width: 1px;
+    background-color: #CCEEFF;
+    display: inline-block;
+    margin: 0px 20px 0;
+    vertical-align: -7px;
+}

@@ -1,0 +1,147 @@
+.login-wrapper {
+    position: relative;
+    height: 100%;
+    font-size: 0;
+    background: url("../../../../resources/img/beijing.png") no-repeat left top/ 50% 100%;
+}
+
+.video-bg {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.login-form-wrapper {
+    /*position: absolute;*/
+    /*top: 0; right: 0; bottom: 0; left: 0;*/
+    /*background: rgba(0, 0, 0, 0.4);*/
+}
+
+.login-form-content {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translate(-0%,-50%);
+}
+
+.login-form-content .login-wrap {
+    width: 500px;
+    /* height: 450px; */
+    background: #FFF;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    transition: all 1s ease;
+    border-radius: 6px;
+}
+
+.login-form-content .sys-name {
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+
+}
+
+.login-form-left {
+    float: left;
+    width: 568px;
+    height: 100%;
+    background: url("../../../../resources/img/login_form_bg.png");
+    background-size: cover;
+    text-align: center;
+}
+
+.login-form-left>.slogan {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.login-form-left>.slogan>.logo {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+}
+
+.login-form-left>.slogan>h3 {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.login-form-right {
+    height: 100%;
+    padding: 40px 0 100px;
+    text-align: center;
+    position: relative;
+}
+
+.login-form-right>.login-form>h3.sys-name {
+    text-align: center;
+    font-size: 36px;
+    color: #000;
+}
+
+.login-form-right>.login-form {
+    display: inline-block;
+    width: 400px;
+}
+
+.login-form-right>.login-form>h3 {
+    font-size: 20px;
+    color: #51596D;
+    font-weight: 600;
+    margin-bottom: 35px;
+    text-align: left;
+}
+
+.login-form-right>.login-form>.form-item {
+    margin-bottom: 32px;
+}
+
+.login-form-right>.login-form input {
+    border-radius: 4px;
+    /* line-height: 33px; */
+}
+
+.login-form-right>.login-form .ant-btn-primary {
+    background-color: #3698FD;
+    border-radius: 5px;
+    line-height: 48px;
+    height: 48px;
+    width: 100%;
+    padding: 0;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.login-form .account-form-link p {
+    float: right;
+    font-size: 14px;
+    color: #3698FD;
+    cursor: pointer;
+}
+
+
+.get-captcha{
+    height: 100%;
+    float: right;
+}
+
+.get-captcha.disable{
+    cursor: no-drop;
+    
+}
+
+.login-copy-right{
+    width: 500px;
+    color: #000;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 50px;
+    position: absolute;
+    bottom: 5%;
+    right: 10%;
+    transform: translate(-0%,-50%);
+}

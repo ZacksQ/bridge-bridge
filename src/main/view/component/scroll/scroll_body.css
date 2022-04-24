@@ -1,0 +1,12 @@
+.scroll-body {
+    overflow: auto;
+}
+
+.scroll-body::-webkit-scrollbar {
+    width: 2px;
+    background: transparent;
+}
+
+.scroll-body::-webkit-scrollbar-thumb {
+    background: #dddddd;
+}

@@ -1,0 +1,19 @@
+.draggable-modal-header {
+    padding: 16px 24px;
+    cursor: move;
+}
+
+.draggable-modal-title {
+    margin: 0;
+    color: rgba(0,0,0,0.85);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    word-wrap: break-word;
+    user-select: none;
+}
+
+.draggable-modal-body {
+    padding: 24px;
+    overflow: hidden;
+}

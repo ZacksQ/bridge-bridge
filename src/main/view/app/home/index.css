@@ -1,0 +1,608 @@
+.map.con-wrap,
+.wrapper,
+.z-app-main {
+    height: 100% !important;
+    position: relative;
+}
+
+.z-app-main .wrapper {
+    background: #ecf0f5;
+}
+
+.search-wrap {
+    position: absolute;
+    top: 12px;
+    left: 112px;
+    z-index: 1;
+    width: 450px;
+}
+.search-left{
+    position: absolute; 
+    top: 12px;
+    left: 12px;
+    z-index: 1;
+    width: 90px;
+    background-color: #FFF;
+    padding: 10px;
+    font-size: 12px;
+    color: #ccc;
+    line-height: 30px;
+}
+
+.search-left .active {
+    color: #2e98f8;
+}
+
+.search-left div{
+    cursor: pointer;
+}
+
+.search-result, .search-bridge {
+    background: #FFFFFF;
+    box-shadow: 0 0 8px 0 #A3A3A3;
+    padding: 12px 10px;
+    font-size: 12px;
+}
+.search-bridge{
+    font-size: 16px;
+    cursor: pointer;
+}
+.search-bridge:hover{
+    background-color: #F2F3F5;
+}
+.search-bridge span{
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-top: 2px solid #206FC7;
+    border-left: 2px solid #206fc7;
+    border-bottom: transparent;
+    border-right: transparent;
+    transform-origin: center;
+    transform: rotate(-45deg);
+    margin-right: 8px;
+}
+
+.iconlist {
+    background: #FFFFFF;
+    border-radius: 2px;
+    position: absolute;
+    left: 12px;
+    bottom: 85px;
+    z-index: 1;
+    font-size: 12px;
+    padding: 8px 11px;
+}
+.iconlist1 img{
+    width: 16px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+.iconlist1 {
+    background: #FFFFFF;
+    border-radius: 2px;
+    position: absolute;
+    left: 12px;
+    bottom: 90px;
+    display: flex;
+    justify-content: space-evenly;
+    z-index: 1;
+    font-size: 12px;
+    padding: 8px 11px;
+}
+
+.iconlist > div {
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.iconlist img {
+    margin-right: 8px;
+}
+
+.filterlist .row {
+    display: flex;
+    margin-bottom: 8px;
+}
+.filterlist .row1 {
+    display: flex;
+    line-height: 32px;
+    margin-bottom: 8px;
+}
+
+.filterlist .row .label {
+    white-space: nowrap;
+}
+
+.filterlist .row span {
+    margin-right: 12px;
+    margin-bottom: 6px;
+    display: inline-block;
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+.resultlist .item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    cursor: pointer;
+    padding: 5px;
+}
+.resultlist .item_active {
+    background-color: #F2F3F5 !important;
+}
+
+.resultlist .item:hover {
+    background-color: rgba(242,243,245,.7);
+}
+
+.resultlist .item .info {
+    display: flex;
+}
+
+.resultlist .item .bridgepic {
+    width: 85px;
+    height: 60px;
+}
+
+.bimicon {
+    width: 16px;
+    height: 26px;
+}
+
+.resultlist .item .index {
+    width: 22px;
+    /* background: url('./images/普通桥梁.png') no-repeat left top/100% auto; */
+    color: #fff;
+    font-size: 14px;
+    height: 22px;
+    background-color: #f23718;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 22px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.resultlist .item.active {
+    background-color: #F2F3F5;
+}
+
+.resultlist .item.active .index {
+    background-color: #2e98f8;
+}
+
+.resultlist .item .name {
+    font-size: 14px;
+    color: #206FC7;
+    margin-bottom: 5px;
+}
+
+.filteroptions span.active {
+    background-color: #206FC7;
+    color: #fff;
+    border-radius: 2px;
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+.filteroptions.ct {
+    overflow: hidden;
+    height: 24px;
+}
+
+.arecount {
+    width: 57px;
+    color: #fff;
+    height: 43px;
+    background: url('./images/聚合图标.png') no-repeat left top/57px 43px;
+    text-align: center;
+    line-height: 43px;
+}
+
+.map-bridgecard {
+    background: #FFFFFF;
+    /*box-shadow: 0 2px 4px 0 rgba(111, 111, 111, 0.50);*/
+    /*border-radius: 3px;*/
+    width: 350px;
+    /* height: 150px; */
+    padding: 10px;
+    font-size: 12px;
+    position: relative;
+}
+
+.map-bridgecard .typeicon {
+    width: 39px;
+    height: 39px;
+    position: absolute;
+    top: -10px;
+    right: 10px;
+}
+.map-bridgecard .bridgename {
+    color: #206FC7;
+    font-size: 14px;
+}
+.map-bridgecard .mb-info div {
+    margin-bottom: 4px;
+}
+
+.map-bridgecard .mb-wrap {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.map-bridgecard .mb-wrap .bimg {
+    width: 78px;
+    height: 78px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.btn-wrap {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.btn-wrap > div {
+    border: 1px solid #D9D9D9;
+    border-radius: 4px;
+    color: #595959;
+    text-align: center;
+    line-height: 26px;
+    width: 100px;
+}
+
+/*.map-bridgecard:after{*/
+/**/
+/*display: block;*/
+/*width: 0;*/
+/*height: 0;*/
+/*border-left: 10px solid transparent;*/
+/*border-right: 10px solid transparent;*/
+/*border-top: 10px solid #fff;*/
+/**/
+/*position: absolute;*/
+/*bottom: -10px;*/
+/*left: 48%;*/
+/*content: '';*/
+/*z-index: 9;*/
+/*!* box-shadow: 0 2px 4px 0 rgba(111, 111, 111, 0.50); *!*/
+/*}*/
+.map-bridgecard .icon {
+
+    display: block;
+    width: 19px;
+    height: 33px;
+    background: url('http://webapi.amap.com/theme/v1.3/markers/b/mark_bs.png') no-repeat left top/19px 33px;
+    position: absolute;
+    bottom: -50px;
+    left: 48%;
+    /* content: ''; */
+    z-index: 8;
+    /* box-shadow: 0 2px 4px 0 rgba(111, 111, 111, 0.50); */
+}
+
+.amap-info-close {
+    right: 4px !important;
+}
+
+.ant-spin-nested-loading {
+    height: 100%;
+}
+
+.ant-spin-container {
+    height: 100%;
+}
+
+.dot_circle:before {
+    content: ' ';
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background-color: #F7554C;
+    border-radius: 50%;
+}
+
+.dot_circle:after {
+    content: ' ';
+    position: absolute;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    background-color: #F7554C;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3) inset;
+    animation-name: 'ripple'; /*动画属性名*/
+    animation-duration: 1s; /*动画持续时间*/
+    animation-timing-function: ease; /*动画频率*/
+    animation-delay: 0s; /*动画延迟时间*/
+    animation-iteration-count: infinite; /*定义循环资料，infinite为无限次*/
+    animation-direction: normal; /*定义动画方式*/
+}
+
+@keyframes ripple {
+    0% {
+        left: 15px;
+        top: 15px;
+        opacity: .75;
+        width: 0;
+        height: 0;
+    }
+    100% {
+        left: -15px;
+        top: -15px;
+        opacity: 0;
+        width: 60px;
+        height: 60px;
+    }
+}
+
+.cc{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    z-index: 101;
+}
+
+.dot{
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.dot_orange{
+    background-color: #ff8e22;
+}
+.dot_red{
+    background-color: #F7554C;
+}
+
+.wave{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.wave * {
+    position: absolute;
+    border-radius: 50%;
+    animation: opac 4s infinite;
+}
+
+.wave_orange{
+    border: 1px solid #ff8e22;
+}
+.wave_red{
+    border: 1px solid #F7554C;
+}
+
+@keyframes opac {
+    from {
+        opacity: 1;
+        width: 0;
+        height: 0;
+        top: 50%;
+        left: 50%;
+    }
+    to {
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+}
+
+.animate .w2 {
+    animation-delay: 1s;
+}
+
+.animate .w3 {
+    animation-delay: 2s;
+}
+
+.animate .w4 {
+    animation-delay: 3s;
+}
+
+.showMore_on, .showMore_off {
+    position: relative;
+    color: #595959;
+    line-height: 22px;
+    border: 1px solid #BFBFBF;
+    padding: 0 24px 0 6px !important;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.showMore_on:after{
+    position: absolute;
+    display: inline-block;
+    border-top: transparent;
+    border-bottom: 2px solid #595959;
+    border-left: transparent;
+    border-right: 2px solid #595959;
+    transform-origin: center;
+    transform: rotate(-135deg);
+    content: '';
+    width: 7px;
+    height: 7px;
+    right: 8px;
+    top: 8px;
+}
+.showMore_off:after{
+    position: absolute;
+    display: inline-block;
+    border-top: transparent;
+    border-bottom: 2px solid #595959;
+    border-left: transparent;
+    border-right: 2px solid #595959;
+    transform-origin: center;
+    transform: rotate(45deg);
+    content: '';
+    width: 7px;
+    height: 7px;
+    top: 5px;
+    right: 8px;
+}
+
+.amap-marker .amap-marker-content>div{
+    background-image: url(http://webapi.amap.com/theme/v1.3/m1.png) !important;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center !important;
+}
+
+.amap-marker .amap-marker-content .special_marker{
+    background-image: none !important;
+}
+/* 侧边报表样式 */
+.ant-drawer-right{
+    position: absolute !important;
+    right: 0 ;
+    /* top: 103px !important; */
+    z-index: 1;
+    /* height:90vh; */
+    width: 480px !important;
+    overflow-y: auto;
+    background-color: #fff;
+    transition: .3s;
+    box-sizing: border-box;
+}
+.ant-drawer-right1{
+    box-sizing: border-box;
+    position: absolute !important;
+    /* right: -550 ; */
+    display: none;
+    z-index: 1;
+    /* height:90vh; */
+    width: 480px !important;
+    overflow: hidden;
+    background-color: #fff;
+    transition: .3s
+}
+
+.ant-drawer-body{
+    padding: 0 !important;
+}
+
+.statistics-box{
+    height: 100%;
+    display: flex;
+    flex-direction:column ;
+    box-sizing: border-box;
+}
+
+.statisticsTitle{
+    background-color:#595959;
+    color: #FFF;
+    line-height: 30px;
+    font-size: 14px;
+    padding-left: 10px ;
+}
+
+.statisticsContent{
+    flex: 1;
+    overflow-y: auto;
+    margin-top: 10px;
+}
+
+/* 百度地图样式 */
+#mapType {
+    width: 202px;
+    background-color: #fff;
+    background-color: rgba(255,255,255,.8);
+    height: 80px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 5px;
+    left: 12px;
+    z-index: 1;
+}
+#mapType .normal {
+    /* z-index: 1;
+    background-position: 0 0; */
+    right: 106px;
+}
+#mapType .mapTypeCard {
+    height: 60px;
+    width: 86px;
+    position: absolute;
+    border-radius: 2px;
+    top: 10px;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    border: 1px solid rgba(153,153,153,.42);
+    background: url(http://webmap1.bdimg.com/wolfman/static/common/images/new/maptype_a6d3e9b.png) no-repeat 0 0;
+    background-size: 86px 240px;
+    -webkit-transition-property: right,background-image;
+    transition-property: right,background-image;
+    -webkit-transition-duration: .4s;
+    transition-duration: .4s;
+}
+#mapType .earth {
+    background-position: 0 -181px;
+}
+#mapType .satellite, #mapType .earth {
+    right: 10px;
+    /* z-index: 2;
+    background-position: 0 -60px; */
+}
+#mapType .switch-box {
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    line-height: 22px;
+    color: #fff;
+    background: rgba(0,0,0,.5);
+}
+#mapType .mapTypeCard span {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: inline-block;
+    padding: 3px 3px 2px 4px;
+    font-size: 12px;
+    height: 12px;
+    line-height: 12px;
+    color: #FFF;
+    border-top-left-radius: 2px;
+}
+.box-type{
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    /* background-color: #fff; */
+    width: 40px;
+    align-items: center;
+    text-align:center;
+    right: 476px;
+    top: 380px;
+    /* transition: .1s */
+}
+.box-type1{
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    /* background-color: #fff; */
+    /* width: 40px; */
+    align-items: center;
+    text-align:center; 
+    right: 0;
+    top: 380px;
+    transition: .2s
+}
+
+.road-search{
+    width: 200px;
+}

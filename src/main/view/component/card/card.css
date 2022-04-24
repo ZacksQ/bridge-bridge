@@ -1,0 +1,39 @@
+.card {
+    margin: 0 0 30px;
+    padding: 16px;
+    background: #ffffff;
+    /* box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.35); */
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.card .card-title {
+    margin-bottom: 8px;
+}
+
+.card .card-title > h4 {
+    display: inline-block;
+    color: rgb(0 0 0 / 65%);
+    font-size: 16px;
+    transition: all 0.5s ease;
+    font-weight: 500;
+}
+
+.card .card-title > h4.clickable {
+    color: #1890ff;
+    cursor: pointer;
+}
+
+.card .card-title > h4.clickable > .back-icon {
+    margin-right: 12px;
+}
+
+.card .card-title > h4.clickable:hover {
+    color: #40a9ff;
+}
+
+.card .card-footer {
+    color: #2c2c2c;
+    font-size: 14px;
+    padding: 8px 0;
+}

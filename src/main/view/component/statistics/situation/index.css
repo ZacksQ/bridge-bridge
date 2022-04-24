@@ -1,0 +1,103 @@
+.tltie{
+    font-weight: 900 ;
+    color: #000;
+    margin:10px;
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+}
+.tltie span{
+    font-weight: 100 ;
+    /* color: #000; */
+    /* margin: 10px; */
+}
+.optremove{
+    width: 100%;
+    flex: 1 1;
+}
+.select{
+    margin-left: 10px;
+    font-size: 10 !important;
+    width: 50 !important;
+}
+.radio{
+    margin-left: 10px;
+    font-size: 10 !important; 
+    margin-right: 10px;
+}
+.box{
+    border-bottom: 1px #ccc solid;
+}
+.box-icon{
+    display: flex;
+    justify-content: space-around ;
+    width: 100%;
+    margin-top: 10px;
+}
+.box-icon div.active{
+    align-items: center;
+    text-align:center;
+}
+.box-icon div.active span{
+    width: 100%;
+    display: block;
+    align-items: center;
+}
+.box-icon div.active span.span1{
+    font-size: 12px;
+    color: #ccc;
+}
+.box-icon div.active span.span2{
+    font-size: 18px;
+    color: #000;
+}
+.box-icon div.active .icon{
+    color: #1890ff;
+    font-size: 26px;
+}
+.box-icon div{
+    align-items: center;
+    cursor: pointer;
+    text-align:center;
+}
+.box-icon div span{
+    width: 100%;
+    display: block;
+    align-items: center;
+}
+.box-icon div span.span1{
+    font-size: 12px;
+    color: #ccc;
+}
+.box-icon div span.span2{
+    font-size: 18px;
+    color: #ccc;
+}
+.box-icon div .icon{
+    color: #ccc;
+    font-size: 26px;
+}
+.select-box2{
+    margin-left: 20px;
+}
+
+ /* .antv canvas{
+    width: 455px !important;
+} */
+.chart-wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+}
+.situ-block {
+    background-color: #fff;
+    /* padding: 10px 17px 17px; */
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+}
+.situ-block.f15 {
+    flex: 1.5 1;
+}

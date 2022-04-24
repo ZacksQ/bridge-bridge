@@ -1,0 +1,144 @@
+.menu-header {
+    list-style: none;
+    background: #fff;
+    color: #4b646f;
+    font-size: 14px;
+    line-height: 40px;
+    padding: 0 16px;
+}
+
+.menu-item {
+    list-style: none;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.menu-item > .sub-menu {
+    background: #f1f1f1;
+    padding-left: 0;
+    line-height: 0;
+    list-style-type: disc;
+    height: 0;
+}
+
+.menu-item > .sub-menu > .menu-item {
+    list-style: none;
+    overflow: hidden;
+}
+
+.menu-item > .menu-item-link {
+    display: block;
+    position: relative;
+    height: 44px;
+    font-size: 14px;
+    color: rgba(0,0,0,.85);
+    font-weight: 500;
+    border-left: 3px solid transparent;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0 12px;
+    transition: initial;
+    border-left: 4px solid #fff;
+    fill: rgba(0,0,0,.85);
+}
+
+.menu-item > .sub-menu > .menu-item > .menu-item-link {
+    height: 0;
+    font-size: 0;
+    border: none;
+    padding: 0 8px 0 8px;
+}
+
+.menu-item.active > .menu-item-link,
+.menu-item > .menu-item-link:hover {
+    color: #1890FF;
+    /*border-left: 3px solid #3E8EF7;*/
+    background: #CDE2F7;
+    border-left: 4px solid #1890FF;
+    fill: #1890FF;
+}
+/* .menu-item.active > .menu-item-link svg g polygon, .menu-item > .menu-item-link:hover svg g polygon{
+    stroke: #1890FF;
+} */
+
+.menu-item.active .sub-menu .menu-item.active{
+    background: #5773FF;
+}
+.menu-item.active .sub-menu .menu-item.active a.menu-item-link{
+    color: #fff
+}
+.menu-item.active > .sub-menu > .menu-item > .menu-item-link,
+.menu-item > .sub-menu > .menu-item > .menu-item-link:hover {
+    border: none;
+    background: transparent;
+}
+
+.menu-item > .menu-item-link > .menu-item-icon {
+    position: absolute;
+    top: 0; bottom: 0;
+    margin: auto;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    /*color: #fff;*/
+}
+
+.menu-item > .menu-item-link > .menu-item-title {
+    display: inline-block;
+    margin-left: 10px;
+    line-height: 44px;
+}
+.sub-menu .menu-item-title{ margin-left: 35px !important;}
+.menu-item > .menu-item-link svg{vertical-align: -3px;}
+.menu-item > .sub-menu > .menu-item > .menu-item-link > .menu-item-title {
+    line-height: 38px;
+    /*padding-left: 18px;*/
+}
+
+.menu-item > .menu-item-link > .caret {
+    position: absolute;
+    font-size: 12px;
+    top: 0; right: 8px; bottom: 0;
+    width: 12px; height: 12px;
+    margin: auto;
+    transition: all 0.3s ease;
+}
+.menu-item.expanded > .sub-menu{
+    height: auto;
+}
+/** 菜单激活后的效果 */
+.menu-item.expanded > .sub-menu > .menu-item > .menu-item-link {
+    font-size: 14px;
+    height: 38px;
+}
+
+.menu-item.expanded > .menu-item-link > .caret {
+    transform: rotate(90deg);
+    transform-origin: center;
+}
+/** /菜单激活后的效果 */
+
+/** 小屏处理 */
+@media screen and (max-width: 1600px) {
+    .menu-header,
+    .menu-item > .sub-menu,
+    .menu-item > .menu-item-link > .menu-item-title,
+    .menu-item > .menu-item-link > .caret{
+        display: none;
+    }
+
+    .app-side:hover .menu-item > .sub-menu,
+    .app-side:hover .menu-header,
+    .app-side:hover .menu-item > .menu-item-link > .menu-item-title {
+        display: block;
+    }
+
+    .app-side:hover .menu-item > .menu-item-link > .caret {
+        display: inline-block;
+    }
+}
+/** /小屏处理 */

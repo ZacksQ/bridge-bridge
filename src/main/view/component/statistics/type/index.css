@@ -1,0 +1,43 @@
+.tltie{
+    font-weight: 900 ;
+    color: #000;
+    margin: 10px;
+}
+
+.optremove{
+    width: 100%;
+    flex: 1 1;
+}
+.select-box1{
+    margin-left: 180px;
+}
+.radio{
+    margin-left: 10px;
+    font-size: 10 !important;
+}
+.box{
+    border-bottom: 1px #ccc solid;
+}
+.tabs{
+    margin-left: 20px;
+}
+
+.situ-block {
+    background-color: #fff;
+    /* padding: 10px 17px 17px; */
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+}
+.situ-block.f15 {
+    flex: 1.5 1;
+}
+
+.chart-wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+}

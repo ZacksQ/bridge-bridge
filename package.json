@@ -1,0 +1,59 @@
+{
+  "name": "biz",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@ant-design/compatible": "^1.0.4",
+    "@ant-design/icons": "^4.0.6",
+    "@antv/data-set": "^0.11.4",
+    "@antv/g2": "^3.5.8-beta.3",
+    "@antv/g2plot": "^1.1.11",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "ali-oss": "^6.8.0",
+    "antd": "^4.1.4",
+    "axios": "^0.26.0",
+    "babel-loader": "^8.1.0",
+    "bizcharts": "^3.5.8",
+    "crypto-js": "^4.0.0",
+    "echarts": "^4.3.0",
+    "http-proxy-middleware": "^2.0.3",
+    "insert-css": "^2.0.0",
+    "moment": "^2.24.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-bmap": "^1.0.117",
+    "react-dom": "^16.13.1",
+    "react-highlight-words": "^0.16.0",
+    "react-keeper": "^2.1.8",
+    "react-redux": "^7.2.0",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.1",
+    "react-transition-group": "^4.3.0",
+    "redux": "^4.0.5",
+    "redux-persist": "^6.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

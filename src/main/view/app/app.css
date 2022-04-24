@@ -1,0 +1,233 @@
+html,
+body,
+#root {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    min-width: 1600px;
+    background: #fff;
+}
+
+.pull-right {
+    float: right;
+    color: #A6AFB8;
+}
+
+ul.select {
+    padding: 0;
+    margin-bottom: 0;
+}
+
+ul.select>li {
+    list-style: none;
+    padding: 8px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+ul.select>li:hover {
+    color: #ffffff;
+    /* box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.3); */
+    background: #011A33;
+}
+
+.expand::after {
+    content: "";
+    display: inline-block;
+    margin-left: 4px;
+    border-top: 3px solid #fff;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    vertical-align: middle;
+}
+
+.vertical-center::before {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.content-wrapper {
+    min-height: 100%;
+    background-color: #F0F2F5;
+    overflow: hidden;
+}
+
+.content-wrapper>.content {
+    margin-left: 260px;
+    transition: margin-left .3s ease;
+    margin-right: 24px;
+}
+
+/** 小屏处理 */
+@media screen and (max-width: 1600px) {
+    .content-wrapper>.content {
+        margin-left: 70px;
+    }
+}
+
+/** /小屏处理 */
+
+/** 修复表格无数据时的显示问题 */
+.ant-table-expanded-row-fixed {
+    width: auto !important;
+}
+
+.form-element-normal {
+    /*float: right!important;*/
+}
+
+.form-element-right .ant-form-item-label {
+    width: 35%;
+}
+
+.form-element-left .ant-form-item-label {
+    width: 100%;
+    text-align: left;
+}
+
+.form-element-left .cus-element-large {
+    width: 240px;
+}
+
+.form-element-left .form-element-antd {
+    width: 220px;
+}
+
+.form-element-left .form-element-small {
+    width: 180px;
+}
+
+.form-element-right .cus-element-large {
+    width: 240px;
+}
+
+.form-element-right .form-element-antd {
+    width: 220px;
+}
+
+.form-element-right .form-element-small {
+    width: 180px;
+}
+
+.form-element-small {
+    width: 100%;
+}
+
+/*
+针对当前布局下配置的textArea样式，后续也许有更好的方法，暂时先这样写
+*/
+.form-element-antd-textArea-right {
+    width: 99.3%;
+}
+
+.form-element-antd-textArea-right .ant-form-item-label {
+    width: 11.2%;
+}
+
+.form-element-antd-textArea-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-element-antd-textArea-left .ant-form-item-label {
+    width: 50%;
+    text-align: left;
+}
+
+.operate {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.operate .img {
+    width: 16px;
+    height: 16px;
+    margin: 0 16px;
+}
+
+.file-upload-form-contain .ant-upload-list-text {
+    display: none;
+}
+
+.upload-file-name-contain {
+    display: flex;
+    flex-direction: column;
+}
+
+.upload-file-name-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.transparent-btn {
+    display: flex;
+    flex-direction: column;
+}
+
+.cus-element-card .card-title h4 {
+    font-size: 16px !important;
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: 700;
+}
+
+.imitate-form-require {
+    display: inline-block;
+    margin-right: 4px;
+    color: #ff4d4f;
+    font-size: 14px;
+    font-family: SimSun, sans-serif;
+    line-height: 1;
+    content: '*';
+}
+
+.pure-btn {
+    margin: 0 16px;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+
+}
+
+.pure-btn:hover {
+    color: #ffffff;
+}
+
+.ant-popover {
+    white-space: nowrap !important;
+}
+
+.hole-list-wrap {
+    overflow-y: auto;
+    /* height: 720px; */
+    min-height: calc(100vh - 300px);
+    padding: 5px 5px;
+
+}
+
+.hole-list-wrap .list-item {
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 2px 8px;
+    display: inline-block;
+    width: 200px;
+}
+
+.hole-list-wrap .list-item:hover {
+    background-color: #f5f5f5;
+}
+.hole-list-wrap .list-item.selected {
+    color: #1890ff;
+    background-color: #f5f5f5;
+}
