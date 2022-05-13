@@ -7,7 +7,7 @@ module.exports = function (app) {
             changeOrigin : true,  // 设置跨域请求
 
             pathRewrite : {
-                '/zapi' : '' // 将/api/v1 变为 ''
+                '/zapi' : '' 
             }
         })
     );

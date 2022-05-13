@@ -196,9 +196,9 @@ const Login = () => {
                                         {forget && <Form.Item name="newPassword" rules={[{ required: true, message: "请输入密码" }]}>
                                             <Input.Password size="large" onBlur={()=>{form.validateFields()}} prefix={<svg t="1647154142803" className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3631" width="15"><path d="M921.6 450.56H834.60096V163.84a163.84 163.84 0 0 0-163.84-163.84H353.32096a163.84 163.84 0 0 0-163.84 163.84v286.72H102.4A40.96 40.96 0 0 0 61.44 491.52v491.52a40.96 40.96 0 0 0 40.96 40.96h819.2a40.96 40.96 0 0 0 40.96-40.96V491.52a40.96 40.96 0 0 0-40.96-40.96z" fill="#1890FF" p-id="3632"></path><path d="M281.64096 163.84a71.76192 71.76192 0 0 1 71.68-71.68h317.44A71.76192 71.76192 0 0 1 742.44096 163.84v286.72H281.64096z" fill="#FFFFFF" p-id="3633"></path><path d="M870.4 931.84h-716.8v-389.12h716.8z" fill="#1890FF" p-id="3634"></path><path d="M476.20096 753.90976v67.82976a10.24 10.24 0 0 0 10.24 10.24h51.2a10.24 10.24 0 0 0 10.24-10.24v-67.82976a61.44 61.44 0 1 0-71.68 0z" fill="#FFFFFF" p-id="3635"></path></svg>} placeholder="请输入密码" />
                                         </Form.Item>}
-                                        {forget && <Form.Item name="confirmPassword" rules={[{ required: true, message: "请确认密码" }, ({ getFieldValue }) => ({
+                                        {<Form.Item name="confirmPassword" rules={[{ required: true, message: "请确认密码" }, ({ getFieldValue }) => ({
                                             validator(rule, value) {
-                                                const newPassword = getFieldValue("newPassword");
+                                                const newPassword = forget?getFieldValue("newPassword"):getFieldValue("password");
                                                 console.log(newPassword, value)
                                                 if (value && value !== newPassword) {
                                                     return Promise.reject('两次密码输入不一致');

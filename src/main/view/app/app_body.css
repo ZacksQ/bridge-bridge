@@ -495,75 +495,6 @@
     border-radius: 8px;
 }
 
-.attention-focus .cover-wrap {
-    background: url("../../../resources/img/singleFocusbg.png") no-repeat center center/ cover;
-    border-radius: 4px;
-    height: 160px;
-    margin-bottom: 15px;
-
-}
-
-.attention-focus .cover-wrap .inner-border {
-    background: url("../../../resources/img/singleFocusInnerBorder.png") no-repeat center 55px/ 64% auto;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    color: #fff;
-    overflow: hidden;
-}
-
-.attention-focus .cover-wrap .inner-border .tit {
-    text-align: center;
-    /*font-weight: 600;*/
-    font-size: 20px;
-    margin-top: 38px;
-    margin-bottom: 10px;
-}
-
-.attention-focus .cover-wrap .inner-border .txt {
-    text-align: center;
-    font-size: 18px;
-
-}
-
-.attention-focus .footer .tit {
-    font-weight: 600;
-    color: #4A4A4A;
-    font-size: 16px;
-    margin-bottom: 5px;
-}
-
-.attention-focus .footer .intro {
-    color: #6c6c6d;
-    font-size: 14px;
-    margin-bottom: 28px;
-}
-
-
-.treat-case-match .treat-case-item {
-    height: 250px;
-    border: 1px solid #E0E0E0;
-    margin-bottom: 20px;
-}
-
-.treat-case-match .treat-case-item .member-name {
-    line-height: 64px;
-    color: #fff;
-    background-image: url('../../../resources/img/treatcase.png');
-    font-size: 20px;
-    padding-left: 18px;
-
-}
-
-.treat-case-match .treat-case-item.by-user .member-name {
-    background-image: url('../../../resources/img/自定义处治方案.png');
-}
-
-.m.case-price {
-    text-align: right;
-}
-
-.treat-case-match .treat-case-item .case-price .pre-unit,
 .m.case-price .pre-unit {
     color: #FF4D4F;
     font-size: 12px;
@@ -1219,15 +1150,6 @@
     background-position: -168px -140px;
 }
 
-.icon-tools {
-    display: inline-block;
-    width: 28px;
-    height: 28px;
-    background-image: url("../../../resources/img/tools-28.png");
-    background-repeat: no-repeat;
-    margin-top: 10px;
-}
-
 .tools {
     list-style: none;
     margin: 0;
@@ -1304,11 +1226,12 @@
     color: #6E7072;
     border: 1px solid #D2E8FF;
     border-radius: 5px;
-    min-width: 70px;
-    line-height: 30px;
+    min-width: 58px;
+    line-height: 23px;
     text-align: center;
     cursor: pointer;
     margin-right: 15px;
+    padding: 0 5px;
 }
 
 .ap-list-wrap .ap-btn.active {
@@ -1349,7 +1272,21 @@
     background: rgb(242, 242, 242);
     color: rgba(0, 0, 0, 0.85);
 }
+.export-btn{
+    color: #409cff;
+    border-color: #409cff;
+}
 
+.tt>span, .tt .ant-upload{
+    display: inline-block;
+    width: 100%;
+}
+.upload-card .ant-upload-list-text-container{  
+    display: none;
+}
+.tt .ant-progress{
+    display: none;
+}
 .ct .thead{
     background: rgb(248, 248, 248);
     color: rgba(0, 0, 0, 0.85);
@@ -1475,3 +1412,32 @@ tfoot> tr:last-child > td, .tbt{
 .ct .ant-table-tbody > tr:last-child > td{
     border-bottom: 1px solid #E9E9E9 !important;
 }
+
+.welcom-page-wrap{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcom-page-wrap .wbox{
+    display: flex;
+}
+
+.welcom-page-wrap .wbox .hi{
+    margin-right: 30px;
+    width: 60px;
+}
+.welcom-page-wrap .wbox .hi img{
+    width: 100%;
+}
+
+.welcome-txt{ 
+    margin-bottom: 20px;
+    line-height: 1.8;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+}
+
+.ant-table-cell input{ text-align: center;}

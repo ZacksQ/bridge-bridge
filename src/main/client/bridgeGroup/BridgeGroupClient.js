@@ -49,6 +49,10 @@ class BridgeGroupClient {
     static getBridgePierNoBySpanComb = spanComb => {
         return BaseClient.get(`/pile-len/calc/group/span?spanComb=${spanComb}`)
     }
+
+    static changeGroupName = data =>{
+        return BaseClient.get(`/pile-len/calc/group/change`, data)
+    }
 }
 
 export default BridgeGroupClient;

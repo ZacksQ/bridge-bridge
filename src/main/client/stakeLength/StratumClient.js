@@ -39,6 +39,18 @@ class StratumClient {
     static getUploadProcess = taskId => {
         return BaseClient.get(`/pile-len/calc/upload/progress?taskId=${taskId}`)
     }
+
+    static getMdbFileName = () =>{
+        return BaseClient.get(`/pile-len/calc/mdb/filename`)
+    }
+
+    static getSingleDrillInfo = drillId => {
+        return BaseClient.get(`/pile-len/calc/drill/detail?drillId=${drillId}`)
+    }
+    
+    static updateSingleDrillInfo = postData => {
+        return BaseClient.post(`/pile-len/calc/drill/change`, postData)
+    }
 }
 
 

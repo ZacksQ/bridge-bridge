@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef, useContext } from "react";
-import { message, Input, Spin, Form, Select, Table, InputNumber } from "antd";
+import { message, Input, Spin, Form, Select, Table, InputNumber, Button } from "antd";
+import { ExportOutlined } from "@ant-design/icons";
 import BridgeGroupClient from "../../../client/bridgeGroup/BridgeGroupClient";
+import { SERVER_URL } from "../../../config";
 import './calc.css'
 const EditableContext = React.createContext(null);
 
@@ -81,12 +83,12 @@ const EditableCell = ({
                 inputNode = <InputNumber precision={0} min={0} ref={inputRef} onPressEnter={save} onBlur={save} controls={false} style={{ width: '100%' }} />
                 break
             case "select":
-                inputNode = <Select ref={inputRef} onBlur={save} showArrow={false} style={{width: "100%"}}>
+                inputNode = <Select ref={inputRef} onBlur={save} showArrow={false} style={{ width: "100%" }}>
                     {dataList.map(d => <Select.Option value={d.value} key={d.value} >{d.text}</Select.Option>)}
                 </Select>
                 break
             case "double":
-                inputNode = <InputNumber precision={1} min={0} ref={inputRef} onPressEnter={save} onBlur={save} controls={false} style={{ width: '100%' }}/>
+                inputNode = <InputNumber precision={1} min={0} ref={inputRef} onPressEnter={save} onBlur={save} controls={false} style={{ width: '100%' }} />
                 break
             default:
                 inputNode = <Input ref={inputRef} onPressEnter={save} onBlur={save} />
@@ -147,7 +149,7 @@ const CalcTable = ({ selectedBridgeId, data, recordData, reloadData, summaryId, 
     //         fetchBridgePierNoList(selectedBridgeId)
     // }, [selectedBridgeId])
 
-   
+
 
     const columns = [
         {
@@ -254,7 +256,7 @@ const CalcTable = ({ selectedBridgeId, data, recordData, reloadData, summaryId, 
         // const item = newData[index];
         // newData.splice(index, 1, { ...item, ...row });
         // setCalcTableData({ ...calcTableData, detailList: [...newData] })
-        
+
         reloadData(recordData)
     };
 
@@ -294,21 +296,25 @@ const CalcTable = ({ selectedBridgeId, data, recordData, reloadData, summaryId, 
                             onClick={() => {
                                 reloadData({ ...recordData, pierNo: `${item.pierNo}`, id: item.summaryId })
                             }}
-                        >{item.pierNo}</div>)}
+                        >{item.pierNo + "_" + item.drillNum}</div>)}
                     </div>
                 </div>
                 <div className="ctrl">
                     <div className="ap-btn left" onClick={() => {
-                        let tdis = translateX + 425
+                        let tdis = translateX + 420
                         if (tdis >= 0) tdis = 0
                         setTranslateX(tdis)
                     }}></div>
                     <div className="ap-btn right" onClick={() => {
-                        let tdis = translateX - 425
+                        let tdis = translateX - 420
                         let allength = document.getElementsByClassName("ap-list")[0].scrollWidth
-                        if (allength + tdis >= 700)
+                        if (allength + tdis >= 280)
                             setTranslateX(tdis)
                     }}></div>
+                    <Button icon={<ExportOutlined />} size="small" disabled={!summaryId} className="export-btn" onClick={() => {
+                        if (summaryId)
+                            window.open(`${SERVER_URL}/pile-len/calc/result/export?groupId=${selectedBridgeId}&pierNo=${encodeURIComponent(recordData.pierNo)}&summaryId=${summaryId}`)
+                    }}>导出</Button>
                 </div>
             </div>
             <table className="calc-table" width={"100%"}>
@@ -335,7 +341,7 @@ const CalcTable = ({ selectedBridgeId, data, recordData, reloadData, summaryId, 
                         <td className="grey">{calcTableData.m0}</td>
                         <td className="grey">{calcTableData.lamda} </td>
                         <td className="grey">{calcTableData.fa0}</td>
-                        <td className="grey" className="grey">{calcTableData.k2}</td>
+                        <td className="grey">{calcTableData.k2}</td>
                         <td className="grey">{calcTableData.r2}</td>
                         <td className="grey">{calcTableData.hm}</td>
                         <td className="grey">{calcTableData.qr} </td>
@@ -344,7 +350,7 @@ const CalcTable = ({ selectedBridgeId, data, recordData, reloadData, summaryId, 
                         <td className="grey">{(calcTableData.bottomLimit == -1 || calcTableData.bottomLimit == 10000) ? "-" : calcTableData.bottomLimit}</td>
                     </tr>
                     <tr>
-                        <td colSpan={12} className="tl grey" style={{borderBottom: 0}}>{calcTableData.note}</td>
+                        <td colSpan={12} className="tl grey" style={{ borderBottom: 0 }}>{calcTableData.note}</td>
                     </tr>
                 </tbody>
             </table>
@@ -409,28 +415,28 @@ const CalcTable = ({ selectedBridgeId, data, recordData, reloadData, summaryId, 
                                     桩顶反力
                                 </Table.Summary.Cell>
 
-                                <Table.Summary.Cell  className="thead">
+                                <Table.Summary.Cell className="thead">
                                     桩基直径
                                 </Table.Summary.Cell>
-                                <Table.Summary.Cell  className="thead">
+                                <Table.Summary.Cell className="thead">
                                     桩顶标高
                                 </Table.Summary.Cell>
-                                <Table.Summary.Cell  className="thead">
+                                <Table.Summary.Cell className="thead">
                                     桩底标高
                                 </Table.Summary.Cell>
-                                <Table.Summary.Cell  className="thead">
+                                <Table.Summary.Cell className="thead">
                                     承载力富余
                                 </Table.Summary.Cell>
-                                <Table.Summary.Cell  className="thead">
+                                <Table.Summary.Cell className="thead">
                                     长度富余
                                 </Table.Summary.Cell>
-                                <Table.Summary.Cell  className="thead">
+                                <Table.Summary.Cell className="thead">
                                     端承力比例
                                 </Table.Summary.Cell>
-                                <Table.Summary.Cell  className="thead">
+                                <Table.Summary.Cell className="thead">
                                     长细比
                                 </Table.Summary.Cell>
-                                <Table.Summary.Cell  className="thead">
+                                <Table.Summary.Cell className="thead">
 
                                 </Table.Summary.Cell>
                             </Table.Summary.Row>
@@ -441,28 +447,28 @@ const CalcTable = ({ selectedBridgeId, data, recordData, reloadData, summaryId, 
                                 <Table.Summary.Cell className="grey c">
                                     {calcTableData.pileTopCoForce}
                                 </Table.Summary.Cell>
-                                <Table.Summary.Cell  className="grey c">
+                                <Table.Summary.Cell className="grey c">
                                     {calcTableData.pileDiameter}
                                 </Table.Summary.Cell>
-                                <Table.Summary.Cell  className="grey c">
+                                <Table.Summary.Cell className="grey c">
                                     {calcTableData.pileTopHigh}
                                 </Table.Summary.Cell>
-                                <Table.Summary.Cell  className="grey c">
+                                <Table.Summary.Cell className="grey c">
                                     {calcTableData.pileBottomHigh}
                                 </Table.Summary.Cell>
-                                <Table.Summary.Cell  className="grey c">
+                                <Table.Summary.Cell className="grey c">
                                     {calcTableData.carryMore}
                                 </Table.Summary.Cell>
                                 <Table.Summary.Cell className="grey c" >
                                     {calcTableData.lenMore}
                                 </Table.Summary.Cell>
-                                <Table.Summary.Cell  className="grey c">
+                                <Table.Summary.Cell className="grey c">
                                     {calcTableData.carryRatioStr}
                                 </Table.Summary.Cell>
                                 <Table.Summary.Cell className="grey c" >
                                     {calcTableData.slenderRatio}
                                 </Table.Summary.Cell>
-                                <Table.Summary.Cell  className="grey c">
+                                <Table.Summary.Cell className="grey c">
 
                                 </Table.Summary.Cell>
                             </Table.Summary.Row>

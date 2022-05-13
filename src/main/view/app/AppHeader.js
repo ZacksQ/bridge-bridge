@@ -1,8 +1,8 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useImperativeHandle } from "react";
 import { Button, Input, message, Form, Select, Modal, Popover } from "antd";
 import * as Icon from "@ant-design/icons";
 import { useSelector, useDispatch } from "react-redux";
-import { clearAuth } from "../../store/action/AuthAction";
+import { clearAuth, setAuth } from "../../store/action/AuthAction";
 import UserClient from "../../client/system/UserClient";
 import DraggableModal from "../component/modal/DraggableModal";
 import RoadSwitchClient from "../../client/roadSwitchClient/roadSwitchClient";
@@ -15,7 +15,7 @@ import DictionaryClient from "../../client/param/DictionaryClient";
 
 const { Search } = Input;
 
-const AppHeader = ({ menuData }) => {
+const AppHeader = ({ onRef }) => {
     //组件状态
     const [form] = Form.useForm()
     const [pwdFormVisible, setPwdFormVisible] = useState(false);
@@ -36,6 +36,12 @@ const AppHeader = ({ menuData }) => {
         setVisible(false)
     }
 
+    useImperativeHandle(onRef, ()=>{
+        return {
+            setVisible
+        }
+    })
+
     const columns = [
         {
             title: "序号", key: "index", dataIndex: "index", width: 40,
@@ -55,20 +61,21 @@ const AppHeader = ({ menuData }) => {
                         setRoadEditFormVisible(true)
                         setRoadFormData(record)
                     }}>编辑</Button>
-                    <Button disabled={!!record.curRid} type="link" onClick={() => { switchRoad(record.rid) }}>进入项目</Button>
+                    <Button disabled={!!record.curRid} type="link" onClick={() => { switchRoad(record.rid, record.pname) }}>进入项目</Button>
                 </>
             }
         },
 
     ];
 
-    const switchRoad = rid => {
+    const switchRoad = (rid, pname) => {
         setLoading(true)
         RoadSwitchClient.switchRoad(rid).then(res => {
             if (res.code === 0) {
-                fetchRoadSwitchData(roadData)
+                // fetchRoadSwitchData(roadData)
                 setVisible(false)
                 message.success("路线切换中...")
+                dispatch(setAuth({...auth, rid, pname}))
                 setTimeout(() => { window.location.reload() }, 1000)
             } else {
                 message.error(res.resultNote)
@@ -142,10 +149,10 @@ const AppHeader = ({ menuData }) => {
             RoadSwitchClient.editRoad(postData).then(res => {
                 if (res.code === 0) {
                     setRoadEditFormVisible(false)
-                    fetchRoadSwitchData(roadData)
+                    // fetchRoadSwitchData(roadData)
                     message.success("新建成功")
                     let newId = res.data
-                    switchRoad(newId)
+                    switchRoad(newId, values.pname)
                 } else {
                     message.error(res.resultNote)
                 }
@@ -206,7 +213,7 @@ const AppHeader = ({ menuData }) => {
                     <span className="divied"></span>
                     <span className="sys-name">桥梁智能设计系统</span>
                     <div className="pull-right">
-                        <p onClick={() => { setVisible(true) }}><Icon.SwapOutlined className="top-icon" /> <span className="icon-txt">路线切换</span></p>
+                        <p onClick={() => { setVisible(true) }}><Icon.SwapOutlined className="top-icon" /> <span className="icon-txt">{auth.pname?auth.pname: "路线切换"}</span></p>
                         <p><Popover
                             visible={userActionVisible}
                             trigger="click"
@@ -242,7 +249,7 @@ const AppHeader = ({ menuData }) => {
                         }} style={{ marginRight: 10 }} >
                             新建
                         </Button>
-                        <Button danger size={"smaill"} size={"small"} onClick={delRoads} icon={<DeleteOutlined />} >
+                        <Button danger size={"small"} onClick={delRoads} icon={<DeleteOutlined />} >
                             删除
                         </Button>
                     </div>

@@ -22,6 +22,7 @@ class UserClient {
     //更新用户密码
     static registerUser = formData => {
         formData.password = sha256(formData.password).toString();
+        formData.confirmPassword = sha256(formData.confirmPassword).toString();
         return BaseClient.post(`/register`, formData);
     };
 

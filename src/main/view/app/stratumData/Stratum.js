@@ -8,6 +8,7 @@ import StratumClient from "../../../client/stakeLength/StratumClient";
 import DraggableModal from "../../component/modal/DraggableModal";
 import StratumForm from "./StratumForm";
 import { API_PREFIX } from '../../../config'
+import { stratumDefaultData } from '../../defaultData'
 
 const permeableTypeList = [
     { value: true, text: "透水" },
@@ -27,6 +28,7 @@ const EditableCell = ({
     record,
     index,
     children,
+    editable,
     dataList,
     ...restProps
 }) => {
@@ -44,13 +46,17 @@ const EditableCell = ({
         case "double":
             inputNode = <InputNumber precision={2} min={0} controls={false} />
             break
-        default:
+        case "string":
             inputNode = <Input />
             break
+        default:
+            inputNode = children
+            break
     }
+
     return (
         <td {...restProps}>
-            {editing ? (
+            {editing && editable ? (
                 <Form.Item
                     name={dataIndex}
                     style={{
@@ -66,7 +72,7 @@ const EditableCell = ({
                     {inputNode}
                 </Form.Item>
             ) : (
-                children
+                <div className={"editable-cell-value-wrap"+(record && record.defaultData == true ? " quiet" : "")}>{children}</div>
             )}
         </td>
     );
@@ -91,7 +97,8 @@ const Stratum = ({ onRef }) => {
     useImperativeHandle(onRef, () => {
         return {
             setUploadModalVisible,
-            setStratumForm
+            setStratumForm,
+            fetchStratumData: () => fetchStratumData(stratumData)
         }
     })
     const isEditing = (record) => record.id === editingKey;
@@ -156,19 +163,29 @@ const Stratum = ({ onRef }) => {
     //表格列
     const columns = [
         {
+            title: "序号",
+            key: "no",
+            dataIndex: "no",
+            width: 50, align: "center",
+            className: "grey",
+            render(text, record, index) {
+                return index + 1
+            }
+        },
+        {
             title: "岩土编号",
             key: "soilNumber",
             dataIndex: "soilNumber",
             width: 80,
-            editable: true,
+            // editable: true,
             inputType: "string", align:
                 "center",
-            className: "grey"
+            // className: "grey"
         }, {
             title: "岩土名称",
             key: "soilName",
             dataIndex: "soilName",
-            width: 150,
+            width: 130,
             editable: true,
             inputType: "string",
             align: 'center'
@@ -234,7 +251,7 @@ const Stratum = ({ onRef }) => {
             title: "软弱层",
             key: "softSoil",
             dataIndex: "softSoil", editable: true,
-            width: 100,
+            width: 80,
             dataList: softSoilTypeList,
             render(text) {
                 if (text) {
@@ -251,32 +268,32 @@ const Stratum = ({ onRef }) => {
                 "center", render: (text, record) => {
                     const editable = isEditing(record);
 
-                    return editable ? <span>
-                        <Typography.Link
-                            onClick={() => saveRow(record)}
-                            style={{
-                                marginRight: 8,
-                            }}
-                        >
+                    return editable ? <div>
+                        <Button type="link" size="small" onClick={() => {
+                                if (record.defaultData != true) saveRow(record)
+                            }}>
                             保存
-                        </Typography.Link>
-                        <Button type="link" onClick={() => cancel()}>
+                        </Button>
+                        <Divider type="vertical" />
+                        <Button type="link" size="small" onClick={() => { if (record.defaultData != true) cancel() }}>
                             取消
                         </Button>
-                    </span> : (<div>
+                    </div> : (<div>
                         <Button
-                            size="small" type="link" onClick={() => showEditForm(record)}>编辑</Button>
+                            size="small" type="link" onClick={() => { if (record.defaultData != true) showEditForm(record) }}>编辑</Button>
                         <Divider type="vertical" />
-                        <DeleteButton
-                            onConfirm={() => handleDelete(record.id)} />
+                        {record.defaultData != true ? <DeleteButton onConfirm={() => { handleDelete(record.id) }} /> : <Button size="small" type="link" style={{ color: "#ff4d4f" }} >删除</Button>}
                     </div>)
                 }
         }
     ];
+
+
     const mergedColumns = columns.map((col) => {
-        if (!col.editable) {
-            return col;
-        }
+        // if (!col.editable) {
+        //     console.log(col)
+        //     return col;
+        // }
 
         return {
             ...col,
@@ -285,6 +302,7 @@ const Stratum = ({ onRef }) => {
                 inputType: col.inputType,
                 dataIndex: col.dataIndex,
                 title: col.title,
+                editable: col.editable,
                 dataList: col.dataList,
                 editing: isEditing(record),
             }),
@@ -340,14 +358,15 @@ const Stratum = ({ onRef }) => {
                 }}
                 size="small"
                 rowKey="id"
+                rowClassName={() => 'editable-row'}
                 loading={loading}
-                pageData={stratumData}
+                pageData={stratumData.data.length > 0 ? stratumData : stratumDefaultData}
                 columns={mergedColumns}
                 pagination={false}
                 // onChange={handleChange}
                 scroll={{
                     x: "100%",
-                    y: 500
+                    y: 580
                 }} />
         </Form>
         <DraggableModal

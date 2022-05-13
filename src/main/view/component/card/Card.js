@@ -26,8 +26,8 @@ const Card = ({loading, style, className, title, extra, canBack, children, foote
             </div>
         )
         : (
-            <div className="card-title">
-                {title&&<h4>{title}</h4>}
+            title&&<div className="card-title">
+                <h4>{title}</h4>
             </div>
         )
     //卡片脚部

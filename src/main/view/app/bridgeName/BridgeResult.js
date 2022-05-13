@@ -60,7 +60,7 @@ const EditableCell = ({
 };
 
 
-const BridgeResult = ({ selectedBridgeId, showResult, getBaseList, activeKey, onRef, pierNoList }) => {
+const BridgeResult = ({ selectedBridgeId, showResult, getBaseList, activeKey, onRef, pierNoList, fetchBridgePierNoList }) => {
     const [form] = Form.useForm()
     const [loading, setLoading] = useState(false)
     const [bridgeBaseData, setBridgeBaseData] = useState([])
@@ -154,12 +154,13 @@ const BridgeResult = ({ selectedBridgeId, showResult, getBaseList, activeKey, on
             if (res.code === 0) {
                 const newData = [...bridgeBaseData];
                 const index = bridgeBaseData.findIndex((item) => data.id === item.id);
-
                 if (index > -1) {
                     const item = bridgeBaseData[index];
                     newData.splice(index, 1, { ...item, ...row });
                     setBridgeBaseData(newData);
                     setEditingKey('');
+                    fetchBridgePierNoList(selectedBridgeId)
+                    getBridgeResult(selectedBridgeId)
                 }
             } else {
                 message.error(res.resultNote)
@@ -233,21 +234,21 @@ const BridgeResult = ({ selectedBridgeId, showResult, getBaseList, activeKey, on
             title: "计算桩长",
             key: "length",
             dataIndex: "length",
-            width: 80,
+            width: 60,
             align: 'center'
         },
         {
             title: "建议桩长",
             key: "suggestLen",
             dataIndex: "suggestLen",
-            width: 80,
+            width: 60,
             align: 'center'
         },
         {
             title: "对应孔号",
             key: "corrDrillNum",
             dataIndex: "corrDrillNum",
-            width: 80,
+            width: 120,
             editable: true,
             inputType: "select",
             align: 'center',
@@ -268,7 +269,7 @@ const BridgeResult = ({ selectedBridgeId, showResult, getBaseList, activeKey, on
             width: 150,
             render(text, record) {
                 const editable = isEditing(record);
-                return editable ? <span>
+                return editable ? <div className="btn-ctrl-wrap">
                     <Button type="link"
                         onClick={() => saveRow(record)}
                         style={{
@@ -283,7 +284,7 @@ const BridgeResult = ({ selectedBridgeId, showResult, getBaseList, activeKey, on
                     <Button type="link" onClick={() => cancel()}>
                         取消
                     </Button>
-                </span> : (<div className="btn-ctrl-wrap">
+                </div> : (<div className="btn-ctrl-wrap">
                     <Button type="link" onClick={() => { showResult(record) }}>查看结果</Button>
                     <Button type="link" onClick={() => showEditForm(record)}>编辑</Button>
                     <DeleteButton

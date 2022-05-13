@@ -197,47 +197,9 @@
     width: 57px;
     color: #fff;
     height: 43px;
-    background: url('./images/聚合图标.png') no-repeat left top/57px 43px;
+    /* background: url('./images/聚合图标.png') no-repeat left top/57px 43px; */
     text-align: center;
     line-height: 43px;
-}
-
-.map-bridgecard {
-    background: #FFFFFF;
-    /*box-shadow: 0 2px 4px 0 rgba(111, 111, 111, 0.50);*/
-    /*border-radius: 3px;*/
-    width: 350px;
-    /* height: 150px; */
-    padding: 10px;
-    font-size: 12px;
-    position: relative;
-}
-
-.map-bridgecard .typeicon {
-    width: 39px;
-    height: 39px;
-    position: absolute;
-    top: -10px;
-    right: 10px;
-}
-.map-bridgecard .bridgename {
-    color: #206FC7;
-    font-size: 14px;
-}
-.map-bridgecard .mb-info div {
-    margin-bottom: 4px;
-}
-
-.map-bridgecard .mb-wrap {
-    display: flex;
-    margin-bottom: 10px;
-}
-
-.map-bridgecard .mb-wrap .bimg {
-    width: 78px;
-    height: 78px;
-    margin-right: 10px;
-    cursor: pointer;
 }
 
 .btn-wrap {
@@ -255,39 +217,6 @@
     width: 100px;
 }
 
-/*.map-bridgecard:after{*/
-/**/
-/*display: block;*/
-/*width: 0;*/
-/*height: 0;*/
-/*border-left: 10px solid transparent;*/
-/*border-right: 10px solid transparent;*/
-/*border-top: 10px solid #fff;*/
-/**/
-/*position: absolute;*/
-/*bottom: -10px;*/
-/*left: 48%;*/
-/*content: '';*/
-/*z-index: 9;*/
-/*!* box-shadow: 0 2px 4px 0 rgba(111, 111, 111, 0.50); *!*/
-/*}*/
-.map-bridgecard .icon {
-
-    display: block;
-    width: 19px;
-    height: 33px;
-    background: url('http://webapi.amap.com/theme/v1.3/markers/b/mark_bs.png') no-repeat left top/19px 33px;
-    position: absolute;
-    bottom: -50px;
-    left: 48%;
-    /* content: ''; */
-    z-index: 8;
-    /* box-shadow: 0 2px 4px 0 rgba(111, 111, 111, 0.50); */
-}
-
-.amap-info-close {
-    right: 4px !important;
-}
 
 .ant-spin-nested-loading {
     height: 100%;
